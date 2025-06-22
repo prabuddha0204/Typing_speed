@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="one">
+      <span class="main">TYPING </span
+      ><span class="side"
+        >SPEED<br />
+        TEST</span
+      >
+      <br /><button type="button" class="btn btn-outline-light" id="startBtn">
+        CLICK HERE TO START
+      </button>
+
+      <!-- <div class="circle">
+      <button class="tooltip">
+        DOUBLE CLICK HERE TO TEST THE CPM OF YOUR MOUSE
+      </button>
+    </div> -->
+    </div>
+    <div class="text"><span id="sentence"></span></div>
+
+    <div class="keyboard">
+      <div class="row">
+        <div class="key" data-key="Q">Q</div>
+        <div class="key" data-key="W">W</div>
+        <div class="key" data-key="E">E</div>
+        <div class="key" data-key="R">R</div>
+        <div class="key" data-key="T">T</div>
+        <div class="key" data-key="Y">Y</div>
+        <div class="key" data-key="U">U</div>
+        <div class="key" data-key="I">I</div>
+        <div class="key" data-key="O">O</div>
+        <div class="key" data-key="P">P</div>
+      </div>
+      <div class="row">
+        <div class="key" data-key="A">A</div>
+        <div class="key" data-key="S">S</div>
+        <div class="key" data-key="D">D</div>
+        <div class="key" data-key="F">F</div>
+        <div class="key" data-key="G">G</div>
+        <div class="key" data-key="H">H</div>
+        <div class="key" data-key="J">J</div>
+        <div class="key" data-key="K">K</div>
+        <div class="key" data-key="L">L</div>
+      </div>
+      <div class="row">
+        <div class="key" data-key="Z">Z</div>
+        <div class="key" data-key="X">X</div>
+        <div class="key" data-key="C">C</div>
+        <div class="key" data-key="V">V</div>
+        <div class="key" data-key="B">B</div>
+        <div class="key" data-key="N">N</div>
+        <div class="key" data-key="M">M</div>
+      </div>
+    </div>
+    <!-- Results Modal -->
+    <div class="results-overlay" id="resultsOverlay">
+      <div class="results-modal">
+        <div class="results-title">COMPLETED!</div>
+        <div class="results-subtitle">YOUR TYPING PERFORMANCE</div>
+
+        <div class="results-grid">
+          <div class="result-item">
+            <span class="result-value" id="wpmValue">0</span>
+            <span class="result-label">Words Per Minute</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="accuracyValue">0%</span>
+            <span class="result-label">Accuracy</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="timeValue">0s</span>
+            <span class="result-label">Time Taken</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="charactersValue">0</span>
+            <span class="result-label">Characters Typed</span>
+          </div>
+        </div>
+
+        <button class="close-btn" id="closeResults">TRY AGAIN</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
