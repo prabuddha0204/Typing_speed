@@ -226,7 +226,7 @@ function checkDevice() {
   const screenHeight = window.innerHeight;
 
   // Block if mobile device OR screen too small
-  if (isMobile || isTablet || screenWidth < 1024 || screenHeight < 600) {
+  if (isMobile || isTablet || screenWidth < 1800 || screenHeight < 900) {
     showDesktopOnlyMessage();
     return false;
   }
