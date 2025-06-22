@@ -214,3 +214,65 @@ resultsOverlay.addEventListener("click", (e) => {
 // Also add this line in your start button event listener to hide modal when restarting:
 // Add this line inside your startBtn event listener, after startBtn.blur():
 resultsOverlay.classList.remove("show");
+
+// Device restriction - only allow desktop/laptop
+function checkDevice() {
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  const isTablet = /iPad|Android(?!.*Mobile)/i.test(navigator.userAgent);
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  // Block if mobile device OR screen too small
+  if (isMobile || isTablet || screenWidth < 1024 || screenHeight < 600) {
+    showDesktopOnlyMessage();
+    return false;
+  }
+  return true;
+}
+function showDesktopOnlyMessage() {
+  document.body.innerHTML = `
+    <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color:black;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      padding: 20px;
+    ">
+      <div style="
+        background: white;
+        padding: 40px;
+        border: 2px solid black;
+        max-width: 500px;
+        width: 90%;
+      ">
+        <h1 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 20px; color: black;">
+           DESKTOP ONLY
+        </h1>
+        <p style="font-size: 1.2rem; font-weight: 200; margin-bottom: 20px; color: black;">
+          THIS TYPING TEST IS DESIGNED FOR DESKTOP AND LAPTOP COMPUTERS ONLY.
+        </p>
+        <p style="font-size: 1rem; color: #666;">
+          PLEASE ACCESS THIS WEBSITE FROM A DESKTOP OR LAPTOP COMPUTER WITH A PHYSICAL KEYBOARD FOR THE BEST EXPERIENCE.
+        </p>
+        <div style="margin-top: 30px; font-size: 3rem;">
+        </div>
+      </div>
+    </div>
+  `;
+}
+if (!checkDevice()) {
+  // Stop loading the rest of the page
+  throw new Error("Device not supported");
+}
+
+// Check device on page load
+if (!checkDevice()) {
+  // Stop loading the rest of the page
+  throw new Error("Device not supported");
+}
